@@ -1,0 +1,39 @@
+# Read the documentation:
+# Configure wrangler.toml: https://developers.cloudflare.com/workers/wrangler/configuration/
+
+# IMPORTANT NOTES:
+# Configurations that are NOT under an environment heading are used for development as well as all the other environments. You can overwrite a configuration by also placing the variable under an environment heading (e.g. [env.production], [env.production.var]) with the configuration that you want to use for that environment.
+# You can specify environments in my npm scripts with the `--env` flag (e.g. --env=dev, --env=production).
+
+name = "tigergraph-api-server"
+compatibility_date = "2024-08-21"
+
+[vars]
+# For local development with `wrangler dev`, variables in `wrangler.toml` are automatically overridden by any values defined in a `.dev.vars` file located in the root directory of your worker.
+# The `wrangler.toml` file is used for environment variables that you want to check into source control. The `.dev.vars` file is used for environment variables that you do NOT want to check into source control. 
+# The variables that are in the `.dev.vars` file are only accessible in your local development environment.
+# Make sure to add any environment variables that are used outside of local development (e.g. production, preview, staging) to the Cloudflare Dashboard. Sensitive environment variables, such as secrets, ID values, database connection details, and any other sensitive values that you do not want to be exposed, should be stored as encrypted variables in the Cloudflare Dashboard. See https://developers.cloudflare.com/workers/configuration/environment-variables/#add-environment-variables-via-wrangler.
+
+# [env.test.vars]
+
+# [env.staging.vars]
+
+[env.production.vars]
+# NOTE: Any production ID and/or secret variables should be stored in the Cloudflare Dashboard and need to be encrypted (instead of being stored in plain text in this file). See https://developers.cloudflare.com/workers/configuration/environment-variables/.
+
+
+# [[kv_namespaces]]
+# binding = "MY_KV_NAMESPACE"
+# id = "xxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxx"
+
+# [[r2_buckets]]
+# binding = "MY_BUCKET"
+# bucket_name = "my-bucket"
+
+# [[d1_databases]]
+# binding = "DB" # i.e. available in your Worker on env.DB
+# database_name = "my-d1-database"
+# database_id = "database-id-string"
+
+# [ai]
+# binding = "AI"

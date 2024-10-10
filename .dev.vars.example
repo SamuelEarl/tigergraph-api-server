@@ -1,0 +1,7 @@
+# See the notes in the wrangler.toml file about the types of values that should be stored in this file.
+
+TOKEN_ENCRYPTION_SECRET = ""
+
+TIGERGRAPH_SECRET = ""
+TIGERGRAPH_DOMAIN = ""
+TIGERGRAPH_GRAPH_NAME = ""
